@@ -3,6 +3,8 @@ class ContactsController < ApplicationController
   end
   
   def send_message
+
+   UserMailer.welcome_email(params[:contacts]).deliver_now
   end
   
 end

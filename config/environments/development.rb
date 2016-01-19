@@ -35,7 +35,21 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  #safe-beach-7905.herokuapp.com
+  
+  config.action_mailer.default_url_options ={host: "eventorganisation-nicopelv.c9users.io"}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:   'smtp.mailgun.org',
+    port:       2525,
+    enable_starttls_auto: true,
+    user_name:'postmaster@sandbox8836a2e6fc5f4d7aaa5315af4e1e2b9e.mailgun.org',
+    password: 'b0e0b8ac009ec323b664ff8c761c2666',
+    authentication: 'login',
+    domain: 'sandbox8836a2e6fc5f4d7aaa5315af4e1e2b9e.mailgun.org'
+  }
+  
+  
 end
