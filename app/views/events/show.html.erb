@@ -18,7 +18,7 @@
 
 <p>
   <strong>Les contributions à amener sont : </strong>
-  <%= @event.contributions.each do |contribution| %>
+  <% @event.contributions.each do |contribution| %>
     <%= contribution.name %>
   <% end %>
 </p>
