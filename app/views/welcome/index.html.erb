@@ -2,18 +2,38 @@
     <div class="col-sm-12">
         <div class="jumbotron">
           <h1>Organise ton Evenement</h1>
-          <p>Le concept : en quelque clique seulement créer un évenement, invite tes amis et 
+          <p style="color:#333333">Le concept : en quelque clique seulement créer un évenement, invite tes amis et 
           fait une liste des choses à emporter pour passer une bonne soirée !</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+          <p><div class="btn btn-primary btn-lg" role="button"><%= link_to "Organise l'apéro", new_event_path %></div></p>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-sm-12">
-        <h1>Organise un apéritif</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, dolorem, voluptates, voluptas, consequatur hic animi cumque saepe culpa ut at magni rem temporibus est rerum aut delectus tempora inventore numquam.
-        </p>
+    <div class="col-sm-3 text-center">
+        <%= image_tag("Image1.png", class:'imgImgAccueil') %>
+        <h3 style="color:white; text-align:center">
+            Choisis la date et l’heure de l’événement
+        </h3>
+    </div>
+    <div class="col-sm-3 text-center">
+        <%= image_tag("Image2.png", class:'imgImgAccueil') %>
+        <h3 style="color:white; text-align:center">
+            Sélectionne les éléments à apporter à la soirée
+        </h3>
+    </div>
+    <div class="col-sm-3 text-center">
+        <%= image_tag("Image3.png", class:'imgImgAccueil') %>
+        <h3 style="color:white; text-align:center">
+            Invite vos amis par email 
+        </h3>
+    </div>
+    <div class="col-sm-3 text-center">
+        
+            <%= image_tag("Image4.png", class:'imgImgAccueil') %>
+        
+        <h3 style="color:white; text-align:center">
+            Visualise les invités qui ont accepté l’invitation et ce qu’ils amènent
+        </h3>
     </div>
 </div>
