@@ -12,21 +12,31 @@
   <% end %>
 
 
-  <%= f.input :name %><br>
+  <%= f.input :name, label:"Nom de l'événement" %><br>
 
-  <%= f.input :eventday %> <br>
+  <%= f.input :eventday, label:"Date" %> <br>
   
-
-  <%= f.input :place %> <br>
+  <div id='gmaps-canvas'></div> <br>
   
+  <%= f.input :place, label:"Lieu", input_html:{id: 'gmaps-input-address'}, placeholder: 'Start typing a place...' %> <br>
  
-  <%= f.input :longitude %> <br>
+  <%= f.input :longitude, input_html: {id: 'gmaps-output-latitude'}, as: :hidden, label: false %>
   
-
-  <%= f.input :latitude %> <br>
+  <%= f.input :latitude, input_html: {id: 'gmaps-output-longitude'}, as: :hidden, label: false %>
   
-
-    <%= f.submit %>
-
-  
+  <div class ="row">
+    <div class="col-sm-0 col-md-0 col-lg-2"></div>
+    <div class="col-sm-12 col-md-12 col-lg-8">
+      <div class = "scroll_box">
+        
+        <%= f.collection_check_boxes :contribution_ids, Contribution.all.map {|c| [c.id, c.name]}, :first, :last %>
+      </div> 
+    </div>
+    <div class="col-sm-0 col-md-0 col-lg-2"></div>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-12">
+  <%= f.submit 'Créer event', input_html: {class: 'btn btn-primary btn-lg'} %>
+  </div>
 <% end %>
+
+

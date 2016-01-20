@@ -1,29 +1,28 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
 <p>
-  <strong>Name:</strong>
+  <strong>L'événement 
   <%= @event.name %>
+  a été créé avec succès</strong>
 </p>
 
 <p>
-  <strong>Eventday:</strong>
+  <strong>Jour de l'événement:</strong>
   <%= @event.eventday %>
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong>Lieu de l'événement:</strong>
   <%= @event.place %>
 </p>
 
 <p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
+  <strong>Les contributions à amener sont : </strong>
+  <%= @event.contributions.all do |contribution| %>
+    <%= contribution.name %>
+  <% end %>
 </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

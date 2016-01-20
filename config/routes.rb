@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :users
+  get 'contacts' => 'contacts#index'
+  post 'contacts' => 'contacts#send_message'
+
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource

@@ -13,6 +13,22 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery-ui
+//= require gmaps-auto-complete
 
+$( document ).ready(function() {
+    jQuery(function() {
+      var completer;
+    
+      completer = new GmapsCompleter({
+        inputField: '#gmaps-input-address',
+        errorField: '#gmaps-error',
+        positionOutputter: function(latLng) {
+            $('#gmaps-output-latitude').val(latLng.lat());
+            $('#gmaps-output-longitude').val(latLng.lng());
+        }
+      });
+    
+      completer.autoCompleteInit({region: 'FR', country: 'France'});
+    });
+});
