@@ -18,11 +18,9 @@
 
 <p>
   <strong>Les contributions à amener sont : </strong>
-  <%= @event.contributions.all do |contribution| %>
+  <%= @event.contributions.each do |contribution| %>
     <%= contribution.name %>
   <% end %>
 </p>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
