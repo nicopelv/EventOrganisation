@@ -24,8 +24,20 @@
   
   <%= f.input :latitude, input_html: {id: 'gmaps-output-longitude'}, as: :hidden, label: false %>
   
-  <%= f.submit %>
-  
+  <div class ="row">
+    <div class="col-sm-0 col-md-0 col-lg-2"></div>
+    <div class="col-sm-12 col-md-12 col-lg-8">
+      <div style = "height:200px; overflow-y: scroll;">
+        <%= f.simple_fields_for :contributions_events do |contribution_event|%>
+          <%= contribution_event.collection_check_boxes :contribution_id, Contribution.all.map {|c| [c.id, c.name]}, :first, :last %>
+        <% end %>
+      </div> 
+    </div>
+    <div class="col-sm-0 col-md-0 col-lg-2"></div>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-12">
+  <%= f.submit 'Créer event', input_html: {class: 'btn btn-primary btn-lg'} %>
+  </div>
 <% end %>
 
 
