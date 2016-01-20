@@ -97,3 +97,18 @@ a{
     height:64px;
     width:64px;
 }
+
+.scroll_box {
+    height:150px; 
+    overflow-y: scroll;
+    background-color : white;
+    color: black !important;
+    
+    label { color: #000; 
+        margin-right:5px;
+        margin-left :5px;
+    
+        
+    }
+    
+}

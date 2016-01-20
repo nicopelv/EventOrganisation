@@ -12,6 +12,7 @@ class EventDashboard < Administrate::BaseDashboard
     name: Field::String,
     eventday: Field::DateTime,
     place: Field::String,
+    contributions: Field::HasMany,
     longitude: Field::String.with_options(searchable: false),
     latitude: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,

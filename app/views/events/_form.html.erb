@@ -27,10 +27,9 @@
   <div class ="row">
     <div class="col-sm-0 col-md-0 col-lg-2"></div>
     <div class="col-sm-12 col-md-12 col-lg-8">
-      <div style = "height:200px; overflow-y: scroll;">
-        <%= f.simple_fields_for :contributions_events do |contribution_event|%>
-          <%= contribution_event.collection_check_boxes :contribution_id, Contribution.all.map {|c| [c.id, c.name]}, :first, :last %>
-        <% end %>
+      <div class = "scroll_box">
+        
+        <%= f.collection_check_boxes :contribution_ids, Contribution.all.map {|c| [c.id, c.name]}, :first, :last %>
       </div> 
     </div>
     <div class="col-sm-0 col-md-0 col-lg-2"></div>
