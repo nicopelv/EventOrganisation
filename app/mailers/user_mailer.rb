@@ -3,7 +3,8 @@ class UserMailer < ApplicationMailer
     @email = contacts[:email]
     @message = contacts[:message]
     @name = contacts[:name]
+    @to = 'nicolas.pelvet@gmail.com'
    # @url  = contacts_url
-    mail(to: @email, subject: 'Welcome to My Awesome Site')
+    mail(to: @to, subject: 'Welcome to My Awesome Site')
   end
 end
